@@ -8,11 +8,13 @@ namespace Bumblebee.Implementation
 {
 	public class DateField : TextField, IDateField
 	{
-		public DateField(IBlock parent, By by) : base(parent, by)
+		public DateField(IBlock parent, By by)
+			: base(parent, by)
 		{
 		}
 
-		public DateField(IBlock parent, IWebElement tag) : base(parent, tag)
+		public DateField(IBlock parent, IWebElement tag)
+			: base(parent, tag)
 		{
 		}
 
@@ -29,7 +31,7 @@ namespace Bumblebee.Implementation
 			get
 			{
 				DateTime result;
-				return DateTime.TryParse(Text ?? String.Empty, out result) ? result : new DateTime?();
+				return DateTime.TryParse(Text ?? string.Empty, out result) ? result : new DateTime?();
 			}
 		}
 	}
@@ -37,11 +39,13 @@ namespace Bumblebee.Implementation
 	public class DateField<TResult> : DateField, IDateField<TResult>
 		where TResult : IBlock
 	{
-		public DateField(IBlock parent, By by) : base(parent, by)
+		public DateField(IBlock parent, By by)
+			: base(parent, by)
 		{
 		}
 
-		public DateField(IBlock parent, IWebElement element) : base(parent, element)
+		public DateField(IBlock parent, IWebElement element)
+			: base(parent, element)
 		{
 		}
 

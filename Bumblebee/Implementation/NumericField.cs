@@ -9,11 +9,13 @@ namespace Bumblebee.Implementation
 {
 	public class NumericField : TextField, INumericField
 	{
-		public NumericField(IBlock parent, By by) : base(parent, by)
+		public NumericField(IBlock parent, By by)
+			: base(parent, by)
 		{
 		}
 
-		public NumericField(IBlock parent, IWebElement tag) : base(parent, tag)
+		public NumericField(IBlock parent, IWebElement tag)
+			: base(parent, tag)
 		{
 		}
 
@@ -29,18 +31,20 @@ namespace Bumblebee.Implementation
 			get
 			{
 				double result;
-				return Double.TryParse(Text ?? String.Empty, out result) ? result : new double?();
+				return double.TryParse(Text ?? string.Empty, out result) ? result : new double?();
 			}
 		}
 	}
 
 	public class NumericField<TResult> : NumericField, INumericField<TResult> where TResult : IBlock
 	{
-		public NumericField(IBlock parent, By by) : base(parent, by)
+		public NumericField(IBlock parent, By by)
+			: base(parent, by)
 		{
 		}
 
-		public NumericField(IBlock parent, IWebElement element) : base(parent, element)
+		public NumericField(IBlock parent, IWebElement element)
+			: base(parent, element)
 		{
 		}
 

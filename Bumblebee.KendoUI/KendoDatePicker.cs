@@ -11,11 +11,13 @@ namespace Bumblebee.KendoUI
 	[DebuggerDisplay("KendoDatePicker {ToString}")]
 	public class KendoDatePicker : TextField, IDateField
 	{
-		public KendoDatePicker(IBlock parent, By by) : base(parent, by)
+		public KendoDatePicker(IBlock parent, By by)
+			: base(parent, by)
 		{
 		}
 
-		public KendoDatePicker(IBlock parent, IWebElement tag) : base(parent, tag)
+		public KendoDatePicker(IBlock parent, IWebElement tag)
+			: base(parent, tag)
 		{
 		}
 
@@ -60,7 +62,7 @@ namespace Bumblebee.KendoUI
 			get
 			{
 				var executor = (IJavaScriptExecutor) Session.Driver;
-				return (string) executor.ExecuteScript("return kendo.toString($(arguments[0]).data('kendoDatePicker').value(), 'yyyy-MM-dd');", Tag);
+				return (string )executor.ExecuteScript("return kendo.toString($(arguments[0]).data('kendoDatePicker').value(), 'yyyy-MM-dd');", Tag);
 			}
 		}
 
@@ -69,7 +71,7 @@ namespace Bumblebee.KendoUI
 			get
 			{
 				DateTime result;
-				return DateTime.TryParse(Text ?? String.Empty, out result) ? result : new DateTime?();
+				return DateTime.TryParse(Text ?? string.Empty, out result) ? result : new DateTime?();
 			}
 		}
 
@@ -83,11 +85,13 @@ namespace Bumblebee.KendoUI
 	public class KendoDatePicker<TResult> : KendoDatePicker, IDateField<TResult>, ITextField<TResult>
 		where TResult : IBlock
 	{
-		public KendoDatePicker(IBlock parent, By by) : base(parent, by)
+		public KendoDatePicker(IBlock parent, By by)
+			: base(parent, by)
 		{
 		}
 
-		public KendoDatePicker(IBlock parent, IWebElement tag) : base(parent, tag)
+		public KendoDatePicker(IBlock parent, IWebElement tag)
+			: base(parent, tag)
 		{
 		}
 
