@@ -62,7 +62,7 @@ namespace Bumblebee.KendoUI
 			get
 			{
 				var executor = (IJavaScriptExecutor) Session.Driver;
-				return (string )executor.ExecuteScript("return kendo.toString($(arguments[0]).data('kendoDatePicker').value(), 'yyyy-MM-dd');", Tag);
+				return (string) executor.ExecuteScript("return kendo.toString($(arguments[0]).data('kendoDatePicker').value(), 'yyyy-MM-dd');", Tag);
 			}
 		}
 
